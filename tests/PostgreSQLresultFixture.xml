@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<dataset>
+    <postgresqlresult id="1" string="Hello buddy!"/>
+    <postgresqlresult id="2" string="I like it!"/>
+</dataset>

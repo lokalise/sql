@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit bootstrap="vendor/logics/phpunit-extensions/PHPUnitBootstrap.php" colors="true">
+  <testsuites>
+    <testsuite name="SQL">
+      <directory>./tests</directory>
+    </testsuite>
+    <testsuite name="PHPT">
+      <directory suffix=".phpt">./tests</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <var name="PROJECT_NAME" value="Foundation"/>
+    <var name="DB_HOST" value="localhost"/>
+    <var name="DB_USER" value="test"/>
+    <var name="DB_PASSWD" value="test"/>
+    <var name="DB_DBNAME" value="test_foundation_sql"/>
+    <const name="LOGGER_DISABLE" value="true"/>
+  </php>
+  <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true">
+      <directory suffix=".php">./src</directory>
+    </whitelist>
+  </filter>
+  <logging>
+    <log type="coverage-html" title="SQL" target="build/coverage" charset="UTF-8" yui="true" highlight="false" lowUpperBound="35" highLowerBound="70"/>
+    <log type="coverage-clover" target="build/logs/clover.xml"/>
+    <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
+    <log type="testdox-html" target="build/testdox/index.html"/>
+  </logging>
+</phpunit>
